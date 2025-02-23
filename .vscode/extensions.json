@@ -3,6 +3,8 @@
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "github.vscode-github-actions"
+    "github.vscode-github-actions",
+    "Vue.volar",
+    "vitest.explorer"
   ]
 }

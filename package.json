@@ -10,23 +10,32 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
+    "dev": "vite",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:ci": "pnpm run lint --cache --cache-strategy content --cache-location ~/.cache/eslint/wordcraft",
-    "build": "tsc --project tsconfig.build.json",
+    "build": "vue-tsc --project tsconfig.build.json && vite build",
+    "preview": "vite preview",
     "test": "vitest run",
     "coverage": "vitest run --coverage"
   },
+  "dependencies": {
+    "@vueuse/core": "12.7.0",
+    "vue": "3.5.13"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "4.3.0",
+    "@vitejs/plugin-vue": "5.2.1",
     "@vitest/coverage-v8": "3.0.6",
     "eslint": "9.21.0",
     "eslint-plugin-format": "1.0.1",
     "husky": "9.1.7",
+    "jsdom": "26.0.0",
     "lint-staged": "15.4.3",
     "typescript": "5.7.3",
     "vite": "6.1.1",
-    "vitest": "3.0.6"
+    "vitest": "3.0.6",
+    "vue-tsc": "2.2.4"
   },
   "lint-staged": {
     "*": "eslint --fix"

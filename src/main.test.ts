@@ -1,7 +1,17 @@
-import { name } from './main';
+import { createApp } from 'vue';
+import App from './App.vue';
+import './main';
+
+vi.mock('vue', () => {
+  return {
+    createApp: vi.fn().mockReturnValue({
+      mount: vi.fn(),
+    }),
+  };
+});
 
 describe('main', () => {
-  it('name is exported', () => {
-    expect(name).toEqual('wordcraft');
+  it('should mount the app', () => {
+    expect(createApp).toHaveBeenCalledWith(App);
   });
 });
